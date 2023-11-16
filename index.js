@@ -22,7 +22,7 @@ btnEl.addEventListener("click", () => {
         <strong>Hujambo,Thank you for the feedback!</strong>
         <br>
         <br>
-        <strong><italic>Feedback: ${selectedRating}</italic></strong>
+        <strong><em>Feedback: ${selectedRating}</em></strong>
         <br>
         <p>Your feedback will be used to improve our customer support.</p>
         `;
