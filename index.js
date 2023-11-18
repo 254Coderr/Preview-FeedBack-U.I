@@ -47,7 +47,7 @@ function removeActive() {
     ratingEl.classList.remove("active");
   });
 } catch (error) {
-  console.log('Error occurred,Check Connection:', error); 
+  console.log('Error occurred,Check your Connection:', error); 
 }
 }
 
