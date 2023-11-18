@@ -31,7 +31,7 @@ btnEl.addEventListener("click", () => {
         <br>
         <strong><em>Feedback: ${selectedRating}</em></strong>
         <br>
-        <p>Your feedback will be used to improve our customer support.</p>
+        <p>Your feedback will be used to improve our customer support and user experience.</p>
         `;
   }
 } catch (error) {
