@@ -56,27 +56,22 @@ function removeActive() {
   console.log('Error occurred,Check your Connection:', error); 
 }
 }
- 
-// Function to read text content aloud
+
 function readResponseAloud(text) {
   const speech = new SpeechSynthesisUtterance();
   speech.text = text;
-  
- // Find a male voice based on language or name
- const maleVoices = voices.filter((voice) => {
-  return voice.name.toLowerCase().includes('male') && voice.lang.includes('en');
-  // You might need to adjust the language code 'en' based on the available voices
-});
-
-if (maleVoices.length > 0) {
-  speech.voice = maleVoices[0];
-}
 
   speech.volume = 1;
   speech.rate = 1;
-  speech.pitch = 0.8;
+  speech.pitch = 0.8; // Adjust pitch as desired
+
+  const voices = speechSynthesis.getVoices();
+
+  // Find a male voice
+  const maleVoice = voices.find(voice => voice.name.toLowerCase().includes('male'));
+
+  // Use a male voice if available, otherwise use the default voice
+  speech.voice = maleVoice || voices[0];
 
   speechSynthesis.speak(speech);
 }
-
-
