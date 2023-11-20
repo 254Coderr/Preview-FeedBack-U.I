@@ -61,9 +61,18 @@ function removeActive() {
 function readResponseAloud(text) {
   const speech = new SpeechSynthesisUtterance();
   speech.text = text;
+  
+  // Fetch available voices
+  const voices = speechSynthesis.getVoices();
+
+  // Find a male voice (if available) and set it
+  const maleVoice = voices.find((voice) => voice.name.toLowerCase().includes('male'));
+  if (maleVoice) {
+    speech.voice = maleVoice;
+  }
   speech.volume = 1;
   speech.rate = 1;
-  speech.pitch = 0;
+  speech.pitch = 0.7;
 
   speechSynthesis.speak(speech);
 }
