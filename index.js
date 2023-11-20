@@ -62,17 +62,19 @@ function readResponseAloud(text) {
   const speech = new SpeechSynthesisUtterance();
   speech.text = text;
   
-  // Fetch available voices
-  const voices = speechSynthesis.getVoices();
+ // Find a male voice based on language or name
+ const maleVoices = voices.filter((voice) => {
+  return voice.name.toLowerCase().includes('male') && voice.lang.includes('en');
+  // You might need to adjust the language code 'en' based on the available voices
+});
 
-  // Find a male voice (if available) and set it
-  const maleVoice = voices.find((voice) => voice.name.toLowerCase().includes('male'));
-  if (maleVoice) {
-    speech.voice = maleVoice;
-  }
+if (maleVoices.length > 0) {
+  speech.voice = maleVoices[0];
+}
+
   speech.volume = 1;
   speech.rate = 1;
-  speech.pitch = 0.7;
+  speech.pitch = 0.8;
 
   speechSynthesis.speak(speech);
 }
