@@ -1,7 +1,8 @@
 const ratingEls = document.querySelectorAll(".rating");
 const btnEl = document.getElementById("btn");
-
 const containerEl = document.getElementById("container");
+const speechSynthSupported = 'speechSynthesis' in window;
+
 
 
 let selectedRating = "";
@@ -33,6 +34,11 @@ btnEl.addEventListener("click", () => {
         <br>
         <p>Your feedback will be used to improve our customer support and user experience.</p>
         `;
+        
+      // Read the response aloud if the browser supports Speech Synthesis
+      if (speechSynthSupported) {
+        readResponseAloud(containerEl.innerText);
+      }
   }
 } catch (error) {
     console.log('Error occurred,Check Connection:', error); 
