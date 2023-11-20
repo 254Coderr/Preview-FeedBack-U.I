@@ -56,5 +56,16 @@ function removeActive() {
   console.log('Error occurred,Check your Connection:', error); 
 }
 }
+ 
+// Function to read text content aloud
+function readResponseAloud(text) {
+  const speech = new SpeechSynthesisUtterance();
+  speech.text = text;
+  speech.volume = 1;
+  speech.rate = 1;
+  speech.pitch = 0;
+
+  speechSynthesis.speak(speech);
+}
 
 
