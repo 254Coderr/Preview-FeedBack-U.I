@@ -28,6 +28,7 @@ body {
   .ratings-container {
     display: flex;
     padding: 20px 0;
+    transition: transform 0.3s ease; /* Added transition property */
   }
   
   .rating {
