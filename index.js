@@ -4,7 +4,6 @@ const containerEl = document.getElementById("container");
 const speechSynthSupported = 'speechSynthesis' in window;
 
 
-
 let selectedRating = "";
 
 ratingEls.forEach((ratingEl) => {
@@ -63,7 +62,7 @@ function readResponseAloud(text) {
 
   speech.volume = 1;
   speech.rate = 1;
-  speech.pitch = 0.8; // Adjust pitch as desired
+  speech.pitch = 1; // Adjust pitch as desired
 
   const voices = speechSynthesis.getVoices();
 
