@@ -55,7 +55,7 @@ function removeActive() {
 } catch (error) {
   console.log('Error occurred,Check your Connection:', error); 
 }
-}
+}g
 
 function readResponseAloud(text) {
   const speech = new SpeechSynthesisUtterance();
