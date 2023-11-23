@@ -19,9 +19,11 @@ body {
     text-align: center;
     font-size: 20px;
     clip-path: circle(50%);
-    transform: all 4s ease;
+    transform: clip-path 0.4s ease, transform 0.4s ease;
   }
-  
+  .container:hover {
+    transform: scale(1.2);
+  }
   .heading {
     margin: 5px;
     font-size: 30px;
