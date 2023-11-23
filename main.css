@@ -22,7 +22,7 @@ body {
     transform: clip-path 0.4s ease, transform 0.4s ease;
   }
   .container:hover {
-    transform: scale(1.2);
+    transform: scale(1.2); /* Scale up the container by 1.2x on hover */
   }
   .heading {
     margin: 5px;
