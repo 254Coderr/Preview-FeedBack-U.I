@@ -18,6 +18,7 @@ body {
     max-width: 400px;
     text-align: center;
     font-size: 20px;
+    clip-path: circle(50%);
   }
   
   .heading {
@@ -29,6 +30,7 @@ body {
     display: flex;
     padding: 20px 0;
     transition: transform 0.3s ease; /* Added transition property */
+
   }
   .ratings-container:hover {
     transform: translateX(20px); /* Move the container 20px to the right on hover */
