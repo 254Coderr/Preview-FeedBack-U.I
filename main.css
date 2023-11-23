@@ -19,6 +19,7 @@ body {
     text-align: center;
     font-size: 20px;
     clip-path: circle(50%);
+    transform: all 4s ease;
   }
   
   .heading {
