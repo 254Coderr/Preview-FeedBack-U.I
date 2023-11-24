@@ -1,21 +1,21 @@
-const ratingEls = document.querySelectorAll(".rating");
-const btnEl = document.getElementById("btn");
-const containerEl = document.getElementById("container");
-const speechSynthSupported = 'speechSynthesis' in window;
+const ratingEls = document.querySelectorAll(".rating");// Selects all elements with the class "rating"
+const btnEl = document.getElementById("btn");// Gets the element with the ID "btn"
+const containerEl = document.getElementById("container");// Gets the element with the ID "container"
+const speechSynthSupported = 'speechSynthesis' in window;// Checks if the browser supports Speech Synthesis
 
 
-let selectedRating = "";
+let selectedRating = "";// Keeps track of the selected rating
 
-ratingEls.forEach((ratingEl) => {
-  ratingEl.addEventListener("click", (event) => {
-    try {
+ratingEls.forEach((ratingEl) => {// Loops through all rating elements
+  ratingEl.addEventListener("click", (event) => {// Adds an event listener for each rating element
+    try {// Try block to handle potential errors
 
-    removeActive();
+    removeActive();// Removes the "active" class from all rating elements
     selectedRating =
-      event.target.innerText || event.target.parentNode.innerText;
-    event.target.classList.add("active");
-    event.target.parentNode.classList.add("active");
-  } catch (error) {
+      event.target.innerText || event.target.parentNode.innerText;// Gets the selected rating text
+    event.target.classList.add("active"); // Adds the "active" class to the selected rating element
+    event.target.parentNode.classList.add("active");// Adds the "active" class to the parent of the selected rating element
+  } catch (error) { // Catch block to handle errors
     console.log('Error occurred,Check Connection:', error); 
    }
   });
