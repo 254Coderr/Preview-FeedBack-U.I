@@ -16,13 +16,14 @@ ratingEls.forEach((ratingEl) => {// Loops through all rating elements
     event.target.classList.add("active"); // Adds the "active" class to the selected rating element
     event.target.parentNode.classList.add("active");// Adds the "active" class to the parent of the selected rating element
   } catch (error) { // Catch block to handle errors
-    console.log('Error occurred,Check Connection:', error); 
+    console.log('Error occurred,Check Connection:', error); // Logs the error message
    }
   });
 });
 
-btnEl.addEventListener("click", () => {
-  try {
+btnEl.addEventListener("click", () => {// Adds an event listener for the "btn" element
+  try {// Try block to handle potential errors
+
     
   if (selectedRating !== "") {
     containerEl.innerHTML = `
@@ -35,7 +36,7 @@ btnEl.addEventListener("click", () => {
         `;
         
       // Read the response aloud if the browser supports Speech Synthesis
-      if (speechSynthSupported) {
+      if (speechSynthSupported) {// Checks if a rating has been selected
         readResponseAloud(containerEl.innerText);
       }
   }
